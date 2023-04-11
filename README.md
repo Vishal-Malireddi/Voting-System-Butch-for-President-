@@ -25,8 +25,9 @@ virtual_env: the python virtual environment (stores all the packages needed in t
 
 ## Launching the Application
 1. Make sure you have installed Django
-2. run `python manage.py runserver`
-3. Make sure the url ends with a valid url pattern
+2. Make sure you are in the directory with the manage.py file
+3. run `python manage.py runserver`
+4. Make sure the url ends with a valid url pattern
 
 
 ## Sources
