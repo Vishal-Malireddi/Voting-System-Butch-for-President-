@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    # adding the voting_system/urls.py file so that we don't have to add every subdomain of voting_system/ to this file
     path('voting_system/', include('voting_system.urls')),
     path('admin/', admin.site.urls),
 
