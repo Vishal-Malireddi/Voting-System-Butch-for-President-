@@ -23,10 +23,13 @@ virtual_env: the python virtual environment (stores all the packages needed in t
 	   - urls.py    &emsp;&emsp;&emsp;&emsp;     (Links the views to the host web URL)
 	    -	views.py&emsp;&emsp;&emsp;&emsp;     ("Views are a user interface for what we see when we render a Django Web application." (Nishant, 2020)
 
+## Launching the Application
+1. Make sure you have installed Django
+2. run `python manage.py runserver`
+3. Make sure the url ends with a valid url pattern
 
 
-
-# Sources
-## used for explaining file herarchy and helping us understand django
+## Sources
+### used for explaining file herarchy and helping us understand django
 https://www.askpython.com/django/django-app-structure-project-structure
 https://docs.djangoproject.com/en/4.2/intro/tutorial01/
