@@ -13,12 +13,20 @@ virtual_env: the python virtual environment (stores all the packages needed in t
         - asgi.py    &emsp;&emsp;&emsp;&emsp;    (entry point for ASGI-compatible web servers)
         - wsgi.py    &emsp;&emsp;&emsp;&emsp;    (entry point for WSGI-compatible web servers
    - voting_system/    &emsp;&emsp;&emsp;&emsp;    (this is where our application is aka "our stuff")
-		- __init__.py
-	    - admin.py
-	    - apps.py
-	    - migrations/
+		- \_\_init\_\_.py
+	    - admin.py    &emsp;&emsp;&emsp;&emsp;     (register models with django admin here, admin is pre-built)
+	    - apps.py    &emsp;&emsp;&emsp;&emsp;     (deals with the configuration of the apps)
+	    - migrations/    
 	        - \_\_init\_\_.py
-	    - models.py
-	   - tests.py
-	    -	views.py
+	    - models.py    &emsp;&emsp;&emsp;&emsp;     ("Models are basically the blueprints of the database we are using and hence contain the information regarding attributes and the fields etc of the database." (Nishant, 2020))
+	   - tests.py    &emsp;&emsp;&emsp;&emsp;     (Where we test our code)
+	   - urls.py    &emsp;&emsp;&emsp;&emsp;     (Links the views to the host web URL)
+	    -	views.py&emsp;&emsp;&emsp;&emsp;     ("Views are a user interface for what we see when we render a Django Web application." (Nishant, 2020)
 
+
+
+
+# Sources
+## used for explaining file herarchy and helping us understand django
+https://www.askpython.com/django/django-app-structure-project-structure
+https://docs.djangoproject.com/en/4.2/intro/tutorial01/
