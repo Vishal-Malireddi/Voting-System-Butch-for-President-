@@ -19,7 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     # adding the voting_system/urls.py file so that we don't have to add every subdomain of voting_system/ to this file
-    path('survey/', include('survey.urls')),
+    path('orgvote/', include('orgvote.urls')),
     path('admin/', admin.site.urls),
 
 ]
