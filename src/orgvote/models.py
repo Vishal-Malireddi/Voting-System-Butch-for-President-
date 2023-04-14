@@ -7,6 +7,7 @@ class Organization(models.Model):
 
 class Topic(models.Model):
     name = models.CharField()
+    org = models.ForeignKey(Organization, on_delete=models.CASCADE)
 
 class Survey(models.Model):
     name = models.CharField() 
