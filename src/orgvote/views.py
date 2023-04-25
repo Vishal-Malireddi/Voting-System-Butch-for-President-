@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views.generic import ListView, CreateView, DetailView
 
@@ -31,6 +31,10 @@ class OrganizationCreateView(CreateView):
     form_class = OrganizationModelForm
     queryset = Organization.objects.all()
 
-class SurveyListView(ListView):
+class SurveyDetailView(DetailView):
     template_name = "orgvote/detail.html"
     queryset = Survey.objects.all()
+
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Survey, id = id_) 

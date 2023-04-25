@@ -3,7 +3,7 @@
     {{survey.name}}
     {% for choice in survey.question_set.all%}
     <!-- Display Objects -->
-    <li>{{ choice.question_text }}</li>
+    <li>{{ choice.name }}</li>
    
     <hr/>
     <!-- If object_list is empty  -->

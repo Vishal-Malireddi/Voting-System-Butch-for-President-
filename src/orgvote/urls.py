@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import QuestionCreateView, TopicCreateView, SurveyCreateView, OrganizationCreateView, SurveyListView
+from .views import QuestionCreateView, TopicCreateView, SurveyCreateView, OrganizationCreateView, SurveyDetailView
 
 # define the urls that will be used under the orgvote/ domain
 urlpatterns = [
@@ -8,6 +8,6 @@ urlpatterns = [
     path("create-topic/", TopicCreateView.as_view(), name="createTopic"),
     path("create-survey/", SurveyCreateView.as_view(), name="createSurvey"),
     path("create-organization/", OrganizationCreateView.as_view(), name="createOrganization"),
-    path("survey-view/", SurveyListView.as_view(), name="surveyView")
+    path("survey-view<int:id>/", SurveyDetailView.as_view(), name="surveyView")
 ]
 
