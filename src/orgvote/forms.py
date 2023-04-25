@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Question
+from .models import Question, Topic, Survey, Organization
 
 class QuestionModelForm(forms.ModelForm):
     class Meta:
@@ -12,4 +12,27 @@ class QuestionModelForm(forms.ModelForm):
             'choice1',
             'choice2',
             'choice3',
+        ]
+
+class TopicModelForm(forms.ModelForm):
+    class Meta:
+        model = Topic 
+        fields =[
+           'name',
+           'org' 
+        ]
+
+class SurveyModelForm(forms.ModelForm):
+    class Meta:
+        model = Survey
+        fields =[
+            'name',
+            'topic' 
+        ]
+
+class OrganizationModelForm(forms.ModelForm):
+    class Meta:
+        model = Organization
+        fields =[
+            'name'
         ]
