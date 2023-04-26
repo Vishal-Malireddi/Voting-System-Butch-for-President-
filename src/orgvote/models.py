@@ -10,7 +10,7 @@ class Organization(models.Model):
 
 class Topic(models.Model):
     name = models.CharField(max_length=50)
-    org = models.ForeignKey(Organization, on_delete=models.CASCADE)
+    organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

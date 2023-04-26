@@ -1,9 +1,9 @@
 <ul>
     <!-- Iterate over object_list -->
     {{survey.name}}
-    {% for choice in survey.question_set.all%}
+    {% for question in survey.question_set.all%}
     <!-- Display Objects -->
-    <li>{{ choice.name }}</li>
+    <li><a href="{% url 'orgvote:questionView' question.id %}">{{ question.name }}</a></li>
    
     <hr/>
     <!-- If object_list is empty  -->

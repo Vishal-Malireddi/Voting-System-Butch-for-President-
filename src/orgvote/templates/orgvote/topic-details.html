@@ -1,0 +1,14 @@
+
+<ul>
+    <!-- Iterate over object_list -->
+    {{topic.name}}
+    {% for survey in topic.survey_set.all%}
+    <!-- Display Objects -->
+    <li><a href="{% url 'orgvote:surveyView' survey.id %}">{{ survey.name }}</a></li>
+   
+    <hr/>
+    <!-- If object_list is empty  -->
+    {% empty %}
+    <li>No objects yet.</li>
+    {% endfor %}
+</ul>
