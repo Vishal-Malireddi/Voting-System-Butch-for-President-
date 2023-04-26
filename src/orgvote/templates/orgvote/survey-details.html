@@ -3,7 +3,7 @@
     {{survey.name}}
     {% for question in survey.question_set.all%}
     <!-- Display Objects -->
-    <li><a href="{% url 'orgvote:questionView' question.id %}">{{ question.name }}</a></li>
+    <li><a href="{% url 'orgvote:questionVote' question.id %}">{{ question.name }}</a></li>
    
     <hr/>
     <!-- If object_list is empty  -->
