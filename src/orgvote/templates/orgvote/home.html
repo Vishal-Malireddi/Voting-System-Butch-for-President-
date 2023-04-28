@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'orgStyles.css' %}">
     <!-- <i class="icon-list-ol"></i> icon-list-ol--> 
     <link rel="icon" href="images\2x\baseline_poll_black_24dp.png">
     <!--fontawesome.com is a place to get icons!-->
@@ -23,11 +25,10 @@
 <body>
     <nav>
         <ul class="mainNavBar">
-            <li class="NavBar"><a href="faq.html">FAQ</a></li>
-            <li class="NavBar"><a href="contact.html">Contact Us</a></li>
-            <li class="NavBar"><a href="about.html">About</a></li>
+            <li class="NavBar"><a>Log-in</a></li>
+            <li class="NavBar"><a>Organization</a></li>
+            <li class="NavBar"><a>About</a></li>
             <li class="NavBar"><a>Home</a></li>
-            <li class="Home"><img class="CougarLogo" class="Different" src="images/Washington_State_Cougars_logo.png"><a></a></li>
             <!--<img src="images/Washington_State_Cougars_logo.png">-->
         </ul>
     </nav>
@@ -36,15 +37,11 @@
             <h1>Butch For President!</h1>
         </div>
     </div>
-
+        <h2 href="">Click here to view an existing survey!</h2>
     <div id="indexBackgroundImage">
         <div class="voteHere">
-            <h2 id="siteTime"><a href="websiteDown.html">Vote Now</a></h2>
+            <h2 id="voteHereButton"><a href="websiteDown.html">View Organizations!</a></h2> <!--Here we'll view the list of organizations!-->
         </div>
-        <!--<div id="indexBackgroundImageVoteHereText">
-            <p id="voteHereText"><b>Click above to be able to vote on <br> important topics for your organization!<br></b></p>
-        </div>-->
-        
     </div>
     
     <div class="indexMainText">
