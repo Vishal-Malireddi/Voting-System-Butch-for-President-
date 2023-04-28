@@ -28,6 +28,28 @@
             <li class="NavBar"><a>Home</a></li>
         </ul>
     </nav>
+
+    {% if user.is_authenticated %}
+    <div id="indexBackgroundImage">
+        <div class="logout">
+            <h2 id="logoutButton"><a href="{% url 'members:logout_user' %}">Logout</a></h2> 
+        </div>
+    </div>
+    
+    {% else %}
+    <div id="indexBackgroundImage">
+        <div class="login">
+            <h2 id="loginButton"><a href="{% url 'members:login' %}">Login</a></h2> 
+        </div>
+    </div>
+
+    <div id="indexBackgroundImage">
+        <div class="register">
+            <h2 id="registerButton"><a href="{% url 'members:register_user' %}">Register</a></h2> <!--Here we'll view the list of organizations!-->
+        </div>
+    </div>
+    {% endif %}
+
     <div class="titlePositioning">
         <div class="titleContent">
             <h1>Butch For President!</h1>
