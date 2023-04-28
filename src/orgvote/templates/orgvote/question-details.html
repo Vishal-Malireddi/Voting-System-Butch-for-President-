@@ -1,17 +1,36 @@
-<ul>
-    <!-- Iterate over object_list -->
-    {{question.name}}
-    <!-- Display Objects -->
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Orgvote</title>
 
-    <!-- Display Objects -->
-    <li>{{ question.choice1 }}</li>
-    <li>{{ question.choice1_votes}}</li>
-    <li>{{ question.choice2 }}</li>
-    <li>{{ question.choice2_votes}}</li>
-    <li>{{ question.choice3 }}</li>
-    <li>{{ question.choice3_votes}}</li>
-   
-    <hr/>
-    <!-- If object_list is empty  -->
-    
-</ul>
+        <meta name="Author" content="Butch For President">
+        <link rel="stylesheet" href="{% static 'myfirst.css' %}">
+    </head>
+    <body>
+        <nav>
+            <ul class="mainNavBar">
+
+            </ul>
+        </nav>
+        <ul>
+            <!-- Iterate over object_list -->
+            {{question.name}}
+            <!-- Display Objects -->
+
+            <!-- Display Objects -->
+            <li>{{ question.choice1 }}</li>
+            <li>{{ question.choice1_votes}}</li>
+            <li>{{ question.choice2 }}</li>
+            <li>{{ question.choice2_votes}}</li>
+            <li>{{ question.choice3 }}</li>
+            <li>{{ question.choice3_votes}}</li>
+        
+            <hr/>
+            <!-- If object_list is empty  -->
+            
+        </ul>
+    </body>
+</html>

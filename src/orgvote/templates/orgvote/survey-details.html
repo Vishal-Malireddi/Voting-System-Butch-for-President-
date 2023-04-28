@@ -1,13 +1,32 @@
-<ul>
-    <!-- Iterate over object_list -->
-    {{survey.name}}
-    {% for question in survey.question_set.all%}
-    <!-- Display Objects -->
-    <li><a href="{% url 'orgvote:questionVote' question.id %}">{{ question.name }}</a></li>
-   
-    <hr/>
-    <!-- If object_list is empty  -->
-    {% empty %}
-    <li>No objects yet.</li>
-    {% endfor %}
-</ul>
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Orgvote</title>
+
+        <meta name="Author" content="Butch For President">
+        <link rel="stylesheet" href="{% static 'myfirst.css' %}">
+    </head>
+    <body>
+        <nav>
+            <ul class="mainNavBar">
+
+            </ul>
+        </nav>
+        <ul>
+            <!-- Iterate over object_list -->
+            {{survey.name}}
+            {% for question in survey.question_set.all%}
+            <!-- Display Objects -->
+            <li><a href="{% url 'orgvote:questionVote' question.id %}">{{ question.name }}</a></li>
+        
+            <hr/>
+            <!-- If object_list is empty  -->
+            {% empty %}
+            <li>No objects yet.</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
