@@ -1,14 +1,6 @@
 from django import forms
 
-from .models import Question, Topic, Survey, Organization, Home
-
-class HomeModelForm(forms.ModelForm):
-
-    class Meta:
-        model = Home
-        fields = [
-            
-        ]
+from .models import Question, Topic, Survey, Organization
 
 class QuestionModelForm(forms.ModelForm):
     class Meta:

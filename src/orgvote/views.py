@@ -1,19 +1,17 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect
-from django.views.generic import ListView, CreateView, DetailView
+from django.views.generic import ListView, CreateView, DetailView, TemplateView
 from django.urls import reverse
 
-from .forms import QuestionModelForm, TopicModelForm, SurveyModelForm, OrganizationModelForm, HomeModelForm
-from .models import Question, Topic, Survey, Organization, Home
+from .forms import QuestionModelForm, TopicModelForm, SurveyModelForm, OrganizationModelForm
+from .models import Question, Topic, Survey, Organization 
 
 # Create your views here.
 def index(request):
     return HttpResponse("Hello World. this is the orgvote app")
 
-class HomeCreateView(CreateView):
-    template_name = "orgvote/create.html"
-    form_class = HomeModelForm
-    queryset = Home.objects.all()
+class HomePageView(TemplateView):
+    template_name = 'orgvote/home.html'
 
 class QuestionCreateView(CreateView):
     template_name = "orgvote/create.html"
