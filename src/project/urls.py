@@ -21,5 +21,7 @@ urlpatterns = [
     # adding the voting_system/urls.py file so that we don't have to add every subdomain of voting_system/ to this file
     path('orgvote/', include('orgvote.urls')),
     path('admin/', admin.site.urls),
+    path('members/', include('members.urls')),
+    path('members/', include('django.contrib.auth.urls'))
 
 ]

@@ -3,13 +3,17 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView, CreateView, DetailView
 from django.urls import reverse
 
-from .forms import QuestionModelForm, TopicModelForm, SurveyModelForm, OrganizationModelForm
-from .models import Question, Topic, Survey, Organization
+from .forms import QuestionModelForm, TopicModelForm, SurveyModelForm, OrganizationModelForm, HomeModelForm
+from .models import Question, Topic, Survey, Organization, Home
 
 # Create your views here.
 def index(request):
     return HttpResponse("Hello World. this is the orgvote app")
 
+class HomeCreateView(CreateView):
+    template_name = "orgvote/create.html"
+    form_class = HomeModelForm
+    queryset = Home.objects.all()
 
 class QuestionCreateView(CreateView):
     template_name = "orgvote/create.html"

@@ -5,6 +5,7 @@ from .views import QuestionCreateView, TopicCreateView, SurveyCreateView, Organi
 # define the urls that will be used under the orgvote/ domain
 app_name = "orgvote"
 urlpatterns = [
+    path("", HomeCreateView.as_view(), name="home"),
     path("create-question/", QuestionCreateView.as_view(), name="createQuestion"),
     path("create-topic/", TopicCreateView.as_view(), name="createTopic"),
     path("create-survey/", SurveyCreateView.as_view(), name="createSurvey"),
