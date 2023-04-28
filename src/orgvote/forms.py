@@ -19,7 +19,7 @@ class TopicModelForm(forms.ModelForm):
         model = Topic 
         fields =[
            'name',
-           'org' 
+           'organization' 
         ]
 
 class SurveyModelForm(forms.ModelForm):
