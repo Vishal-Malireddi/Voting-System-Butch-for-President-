@@ -1,3 +1,10 @@
+nav{
+    position:relative;
+    z-index: 10000;
+    top:0px;
+    width: 100%;
+    margin-bottom: 3px;
+}
 
 .centered{
     text-align: center;
@@ -11,10 +18,29 @@
     color: black;
 }
 
-.navBar{
-    border-color:rgb(185, 185, 185);
+ul.mainNavbar{
+    border-color: #A60F2D;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+
+li.navBar a{
+    float: left;
+    display: inline;
+    text-align: left;
+    font-size: large;
+    color: #F9A03F;
+    padding: 16px 14px;
+    text-decoration: none; 
+}
+
+li.navBar a:hover{
+    color: #8E7DBE;
+}
+
+.topPositioning{
+    margin-top:2%;
+    
 }

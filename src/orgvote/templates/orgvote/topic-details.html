@@ -15,7 +15,7 @@
                 <li class="navBar"><a href="{% url 'orgvote:home' %}">Home</a></li>
             </ul>
         </nav>
-        <ul>
+        <ul class="topPositioning">
             <!-- Iterate over object_list -->
             {{topic.name}}
             {% for survey in topic.survey_set.all%}
