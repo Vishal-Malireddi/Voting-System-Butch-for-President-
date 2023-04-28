@@ -1,11 +1,12 @@
 from django.urls import path
 from . import views
-from .views import QuestionCreateView, TopicCreateView, SurveyCreateView, OrganizationCreateView, SurveyDetailView, QuestionDetailView, TopicDetailView, OrganizationDetailView, vote, HomePageView
+from .views import QuestionCreateView, TopicCreateView, SurveyCreateView, OrganizationCreateView, SurveyDetailView, QuestionDetailView, TopicDetailView, OrganizationDetailView, vote, HomePageView, OrganizationListView
 
 # define the urls that will be used under the orgvote/ domain
 app_name = "orgvote"
 urlpatterns = [
     path("", HomePageView.as_view(), name="home"),
+    path("organizations/", OrganizationListView.as_view(), name="Organizations"),
     path("create-question/", QuestionCreateView.as_view(), name="createQuestion"),
     path("create-topic/", TopicCreateView.as_view(), name="createTopic"),
     path("create-survey/", SurveyCreateView.as_view(), name="createSurvey"),
