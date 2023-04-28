@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import QuestionCreateView, TopicCreateView, SurveyCreateView, OrganizationCreateView, SurveyDetailView, QuestionDetailView, TopicDetailView, OrganizationDetailView, vote
+from .views import QuestionCreateView, TopicCreateView, SurveyCreateView, OrganizationCreateView, SurveyDetailView, QuestionDetailView, TopicDetailView, OrganizationDetailView, vote, HomeCreateView
 
 # define the urls that will be used under the orgvote/ domain
 app_name = "orgvote"
