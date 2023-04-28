@@ -1,3 +1,4 @@
+
 .centered{
     text-align: center;
 }
@@ -8,4 +9,12 @@
 
 .textStuff{
     color: black;
+}
+
+.navBar{
+    border-color:rgb(185, 185, 185);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
