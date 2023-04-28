@@ -25,11 +25,7 @@
 <body>
     <nav>
         <ul class="mainNavBar">
-            <li class="NavBar"><a>Log-in</a></li>
-            <li class="NavBar"><a>Organization</a></li>
-            <li class="NavBar"><a>About</a></li>
             <li class="NavBar"><a>Home</a></li>
-            <!--<img src="images/Washington_State_Cougars_logo.png">-->
         </ul>
     </nav>
     <div class="titlePositioning">
@@ -40,7 +36,7 @@
     <h2 href="organizations.html"><a>Click here to view an existing survey!</h2>
     <div id="indexBackgroundImage">
         <div class="voteHere">
-            <h2 id="voteHereButton"><a href="websiteDown.html">View Organizations!</a></h2> <!--Here we'll view the list of organizations!-->
+            <h2 id="voteHereButton"><a href="{% url 'orgvote:Organizations' %}">View Organizations!</a></h2> <!--Here we'll view the list of organizations!-->
         </div>
     </div>
     
