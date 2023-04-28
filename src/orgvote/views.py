@@ -13,6 +13,11 @@ def index(request):
 class HomePageView(TemplateView):
     template_name = 'orgvote/home.html'
 
+class OrganizationListView(ListView):
+    model = Organization
+    template_name = "orgvote/organizations.html"
+    
+
 class QuestionCreateView(CreateView):
     template_name = "orgvote/create.html"
     form_class = QuestionModelForm
