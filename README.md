@@ -1,5 +1,5 @@
 # Voting-System-Butch-for-President-
-This is a repository for the project for CPTS 322
+Welcome to a questionair voting system! Organizations can create topics, surveys, and questions for their members to answer. Their votes are stored in the database and are only visible to organization admins! Feel free to log on and answer questions! Please vote responsably!
 
 ## Project Structure
 virtual_env: the python virtual environment (stores all the packages needed in the directory, this helps to avoid package conficts)
@@ -15,22 +15,33 @@ virtual_env: the python virtual environment (stores all the packages needed in t
    - orgvote/    &emsp;&emsp;&emsp;&emsp;    (this is where our application is aka "our stuff")
 		- \_\_init\_\_.py
 	    - admin.py    &emsp;&emsp;&emsp;&emsp;     (register models with django admin here, admin is pre-built)
-	    - apps.py    &emsp;&emsp;&emsp;&emsp;     (deals with the configuration of the apps)
+	    - apps.py &emsp;&emsp;&emsp;&emsp;(deals with the configuration of the apps)
+		- forms.py &emsp;&emsp;&emsp;&emsp; (a way to shortcut html forms)
 	    - migrations/    
 	        - \_\_init\_\_.py
+		- static/ &emsp;&emsp;&emsp;&emsp;(where the css files are located)
+		- template/orgvote/ &emsp;&emsp;&emsp;&emsp; (the html for the webpages)
 	    - models.py    &emsp;&emsp;&emsp;&emsp;     ("Models are basically the blueprints of the database we are using and hence contain the information regarding attributes and the fields etc of the database." (Nishant, 2020))
 	   - tests.py    &emsp;&emsp;&emsp;&emsp;     (Where we test our code)
 	   - urls.py    &emsp;&emsp;&emsp;&emsp;     (Links the views to the host web URL)
 	    -	views.py&emsp;&emsp;&emsp;&emsp;     ("Views are a user interface for what we see when we render a Django Web application." (Nishant, 2020)
+	- members &emsp;&emsp;&emsp;&emsp; (same structure as orgvote)
+		- handles user login and registration
 
 ## Launching the Application
 1. Make sure you have installed Django
 2. Make sure you are in the directory with the manage.py file
-3. run `python manage.py runserver`
-4. Make sure the url ends with a valid url pattern
+3. run 	`python manage.py makemigrations` and `python manage.py migrate`
+4. run `python manage.py runserver`
+5. Click on the url in the terminal
+6. Make sure the url ends with a valid url pattern
+7. Best url to start with is `/members/register_user/`
+8. You will need to add an account and then you can select an organization, topic and survey and then you can answer the questions.
+9. To create questions you need admin privleges. Currently only our dev team has those privleges
 
 
 ## Sources
 ### used for explaining file herarchy and helping us understand django
 https://www.askpython.com/django/django-app-structure-project-structure
+
 https://docs.djangoproject.com/en/4.2/intro/tutorial01/
