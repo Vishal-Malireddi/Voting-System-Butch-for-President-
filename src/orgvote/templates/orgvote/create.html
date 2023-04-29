@@ -16,10 +16,10 @@
             </ul>
         </nav>
 
-        <form action="." method="POST">
+        <form action="." method="POST" id="creation">
             {% csrf_token %}
             {{form.as_p}}
-            <input type ='submit' value="Save" />
+            <input id="finale" type ='submit' value="Save" />
         </form>
 
     </body>

@@ -1,9 +1,7 @@
 nav{
     position:relative;
-    z-index: 10000;
     top:0px;
     width: 100%;
-    margin-bottom: 3px;
 }
 
 .centered{
@@ -26,13 +24,23 @@ ul.mainNavbar{
     overflow: hidden;
 }
 
-li.navBar a{
-    float: left;
+.navbar {
     display: inline;
+    float: left;
+}
+
+li.navBar {
+    display: block;
+    padding: 8px;
+    background-color: #A60F2D;
     text-align: left;
-    font-size: large;
     color: #F9A03F;
-    padding: 16px 14px;
+    text-decoration: none; 
+}
+
+li.navBar a{
+    font-size: xx-large;
+    color: #F9A03F;
     text-decoration: none; 
 }
 
@@ -40,7 +48,118 @@ li.navBar a:hover{
     color: #8E7DBE;
 }
 
+.titlePositioning{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    width: 10em;
+}
+
+.titleContent{
+    text-align: left;
+    font-size: x-large;
+}
+
 .topPositioning{
-    margin-top:2%;
-    
+    margin-top:2%;   
+}
+
+.boxTime{
+    width: 50%;
+    margin-right: 25%;
+    margin-left: 25%;
+    background-color:rgb(124, 124, 124);
+    padding-top: 0.7%;
+    padding-bottom: 0.71%;
+}
+
+.indexBackgroundImage{
+    background-color:rgb(124, 124, 124);
+    width: 35%;
+    margin-top: 1%; 
+}
+
+h2.homeLogins a{
+    color:#6f091e;
+    background-color:rgb(106, 106, 106);
+    padding: 0.7%;
+    text-align: center;
+    font-size: xx-large;
+}
+
+h2.homeLogins a:hover{
+    color: #b6742e;
+}
+
+.indexMainText{
+    font-size: x-large;
+}
+
+#indexCentered{
+    margin-top: 0.5%;
+    padding: 1%;
+}
+
+ul.listTime{
+    font-size: xx-large;
+}
+
+li.listChoiceOptionLink{
+    text-decoration: none;
+    list-style:none;
+}
+
+li.listChoiceOptionlink a{
+    color:#6f091e;
+    text-decoration-color:#6f091e;
+}
+
+li.listChoiceOptionlink a:after{
+    color:#6f091e;
+    text-decoration-color:#6f091e;
+}
+
+.listTime p{
+    font-size: xx-large;
+}
+
+h3.panel-title{
+    font-size: xx-large;
+    margin-left: 0.5%;
+}
+
+.col-lg-12 h2{
+    font-size: x-large;
+    margin-left: 0.5%;
+}
+
+label.choiceOption{
+    font-size: x-large;
+    margin-left: 0.3%;
+}
+
+button.btn{
+    margin-left: 0.5%;
+    height: 2em;
+    width: 15em;
+}
+
+#creation{
+    font-size: x-large;
+    margin-left: 0.3%;
+}
+
+#creation select{
+    font-size: large;
+    padding: 0.1%;
+}
+
+#creation input{
+    font-size: large;
+}
+
+#creation #finale{
+    margin-left: 0.5%;
+    height: 2em;
+    width: 15em;
 }

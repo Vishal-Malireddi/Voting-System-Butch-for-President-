@@ -16,12 +16,12 @@
             </ul>
         </nav>
         
-        <ul topPositioning>
+        <ul class="listTime">
             <!-- Iterate over object_list -->
             {% for organization in object_list %}
             <!-- Display Objects -->
-            <li>{{ organization.name }}</li>
-            <li><a href="{% url 'orgvote:organizationView' organization.id %}">{{ "link" }}</a></li>
+            <li class="listChoiceOption">{{ organization.name }}</li>
+            <li class="listChoiceOptionLink"><a href="{% url 'orgvote:organizationView' organization.id %}">{{ "link" }}</a></li>
         
             <hr/>
             <!-- If object_list is empty  -->

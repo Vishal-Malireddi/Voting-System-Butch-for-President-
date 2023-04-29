@@ -15,18 +15,18 @@
                 <li class="navBar"><a href="{% url 'orgvote:home' %}">Home</a></li>
             </ul>
         </nav>
-        <ul class="topPositioning">
+        <ul class="listTime">
             <!-- Iterate over object_list -->
             {{question.name}}
             <!-- Display Objects -->
 
             <!-- Display Objects -->
             <li>{{ question.choice1 }}</li>
-            <li>{{ question.choice1_votes}}</li>
+            <li class="listChoiceOptionLink">{{ question.choice1_votes}}</li>
             <li>{{ question.choice2 }}</li>
-            <li>{{ question.choice2_votes}}</li>
+            <li class="listChoiceOptionLink">{{ question.choice2_votes}}</li>
             <li>{{ question.choice3 }}</li>
-            <li>{{ question.choice3_votes}}</li>
+            <li class="listChoiceOptionLink">{{ question.choice3_votes}}</li>
         
             <hr/>
             <!-- If object_list is empty  -->

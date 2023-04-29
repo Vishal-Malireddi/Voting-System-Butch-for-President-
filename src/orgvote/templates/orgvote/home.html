@@ -22,61 +22,62 @@
     <!--fontawesome.com is a place to get icons!-->
     
 </head>
-<body>
-    <nav>
-        <ul class="mainNavBar">
-            <li class="NavBar"><a>Home</a></li>
-        </ul>
-    </nav>
-
-    {% if user.is_authenticated %}
-    <div id="indexBackgroundImage">
-        <div class="logout">
-            <h2 id="logoutButton"><a href="{% url 'members:logout_user' %}">Logout</a></h2> 
-        </div>
-    </div>
+<body class="backgroundTime">
+    <!--
+        <nav>
+            <ul class="mainNavbar">
+                <li class="NavBar"><a>Home</a></li>
+            </ul>
+        </nav>
+    -->
     
-    {% else %}
-    <div id="indexBackgroundImage">
-        <div class="login">
-            <h2 id="loginButton"><a href="{% url 'members:login' %}">Login</a></h2> 
-        </div>
-    </div>
-
-    <div id="indexBackgroundImage">
-        <div class="register">
-            <h2 id="registerButton"><a href="{% url 'members:register_user' %}">Register</a></h2> <!--Here we'll view the list of organizations!-->
-        </div>
-    </div>
-    {% endif %}
 
     <div class="titlePositioning">
         <div class="titleContent">
             <h1>Butch For President!</h1>
         </div>
     </div>
-    <h2 href="organizations.html"><a>Click here to view an existing survey!</h2>
-    <div id="indexBackgroundImage">
-        <div class="voteHere">
-            <h2 id="voteHereButton"><a href="{% url 'orgvote:Organizations' %}">View Organizations!</a></h2> <!--Here we'll view the list of organizations!-->
+    <div class="boxTime">
+        {% if user.is_authenticated %}
+        <div id="indexBackgroundImage">
+            <div class="logout">
+                <h2 id="logoutButton" class="homeLogins centered"><a href="{% url 'members:logout_user' %}">Logout</a></h2> 
+            </div>
+        </div>
+        
+        {% else %}
+        <div id="indexBackgroundImage">
+            <div class="login">
+                <h2 id="loginButton" class="homeLogins centered"><a href="{% url 'members:login' %}">Login</a></h2> 
+            </div>
+        </div>
+
+        <div id="indexBackgroundImage">
+            <div class="register">
+                <h2 id="registerButton" class="homeLogins centered"><a href="{% url 'members:register_user' %}">Register</a></h2> <!--Here we'll view the list of organizations!-->
+            </div>
+        </div>
+        {% endif %}
+
+        <div id="indexBackgroundImage">
+            <div class="voteHere">
+                <h2 id="voteHereButton" class="homeLogins centered"><a href="{% url 'orgvote:Organizations' %}">View Organizations!</a></h2> <!--Here we'll view the list of organizations!-->
+            </div>
         </div>
     </div>
-    
-    <div class="indexMainText">
+    <div class="indexMainText centered">
         <h2>
             Does your group have questions, but have a hard time answering them?
         </h2>
-        <h3>
-            <a href="{% url 'orgvote:Organizations' %}">Click here to view the organizations!</a>
-        </h3>
-
         <p id="indexCentered">
-            Butch for President's voting service lets organizations and clubs create surveys in which members can <br>
-            vote on, so you can vote on topics that matter to you and your organization.<br><br>
+            Welcome to a questionair voting system! <br><br>
 
-            Once you sign up for an account you can join a pre-existing organization, or even create your own!<br><br>
+            Organizations can create topics, surveys, and questions for their members to answer.<br>
+            Their votes are stored in the database and are only visible to organization admins!<br><br>
 
-            Our service ensures that you'll be able to learn about what members of your organization really want!<br>
+            Feel free to log on and answer questions!<br><br>
+
+            Please vote responsibly!
         </p>
     </div>
     

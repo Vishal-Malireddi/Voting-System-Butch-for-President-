@@ -16,7 +16,7 @@
             </ul>
         </nav>
         <!-- inspried by code from https://github.com/PrettyPrinted/youtube_video_code.git-->
-        <div class="row topPositioning">
+        <div class="row listTime">
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -38,15 +38,15 @@
                                     {% csrf_token %}
                                     <div class="form-group">
                                         <div class="radio">
-                                            <label>
+                                            <label class="choiceOption">
                                                 <input type="radio" name="question" value="choice1" required>
                                                 {{ question.choice1 }}
                                             </label> &nbsp;
-                                            <label>
+                                            <label class="choiceOption">
                                                 <input type="radio" name="question" value="choice2">
                                                 {{ question.choice2 }}
                                             </label> &nbsp;
-                                            <label>
+                                            <label class="choiceOption">
                                                 <input type="radio" name="question" value="choice3">
                                                 {{ question.choice3 }}
                                             </label> &nbsp;
