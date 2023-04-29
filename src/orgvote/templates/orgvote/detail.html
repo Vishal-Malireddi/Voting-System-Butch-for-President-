@@ -21,12 +21,12 @@
             {{survey.name}}
             {% for choice in survey.question_set.all%}
             <!-- Display Objects -->
-            <li>{{ choice.name }}</li>
+            <li class="theFinePrint">{{ choice.name }}</li>
         
             <hr/>
             <!-- If object_list is empty  -->
             {% empty %}
-            <li>No objects yet.</li>
+            <li class="theFinePrint">No objects yet.</li>
             {% endfor %}
         </ul>
 

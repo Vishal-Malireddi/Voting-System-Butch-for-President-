@@ -1,9 +1,3 @@
-nav{
-    position:relative;
-    top:0px;
-    width: 100%;
-}
-
 .centered{
     text-align: center;
 }
@@ -15,12 +9,18 @@ nav{
 .textStuff{
     color: black;
 }
+/*Navigation Bar stuff*/
+nav{
+    position:relative;
+    top:0px;
+    width: 100%;
+}
 
 ul.mainNavbar{
     border-color: #A60F2D;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 1%;
     overflow: hidden;
 }
 
@@ -48,6 +48,7 @@ li.navBar a:hover{
     color: #8E7DBE;
 }
 
+/*This is dedicated to the home page*/
 .titlePositioning{
     margin-left: auto;
     margin-right: auto;
@@ -99,7 +100,7 @@ h2.homeLogins a:hover{
     margin-top: 0.5%;
     padding: 1%;
 }
-
+/*This is general choice voting stuff*/
 ul.listTime{
     font-size: xx-large;
 }
@@ -118,11 +119,13 @@ li.listChoiceOptionlink a:after{
     color:#6f091e;
     text-decoration-color:#6f091e;
 }
+/*The colors above was just desparation before giving up*/
 
 .listTime p{
     font-size: xx-large;
 }
 
+/*This is dedicated to the question-vote.html stuff*/
 h3.panel-title{
     font-size: xx-large;
     margin-left: 0.5%;
@@ -135,7 +138,7 @@ h3.panel-title{
 
 label.choiceOption{
     font-size: x-large;
-    margin-left: 0.3%;
+    margin-left: 0.35%;
 }
 
 button.btn{
@@ -144,9 +147,10 @@ button.btn{
     width: 15em;
 }
 
+/*This is all dedicated to the specifics in the create.html stuff*/
 #creation{
     font-size: x-large;
-    margin-left: 0.3%;
+    margin-left: 0.5%;
 }
 
 #creation select{
@@ -162,4 +166,55 @@ button.btn{
     margin-left: 0.5%;
     height: 2em;
     width: 15em;
+}
+
+/*This is dedicated to the detail.html stuff*/
+li.theFinePrint{
+    margin-left: 0.5%;
+}
+
+/*This is dedicated to the login.html stuff*/
+#loginTitle{
+    margin-left: 0.5%;
+}
+
+label.form-label{
+    font-size: x-large;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    margin-left: 0.5%;
+}
+input.form-control{
+    font-size: large;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    margin-left: 0.5%;
+}
+
+input.btn{
+    font-size: large;
+    margin-left: 0.5%;
+    height: 2em;
+    width: 15em;
+}
+
+/*This is dedicated to the register_user.html stuff*/
+#error-handling{
+    font-size: xx-large;
+}
+
+#registerSize{
+    font-size: 220%;
+    margin: 0%;
+    margin-left: 0.5%;
+    padding: 0%;
+}
+
+.registrationTime{
+    font-size: x-large;
+    margin-left: 0.5%;
+}
+
+.registrationTime input{
+    font-size: large;
 }
