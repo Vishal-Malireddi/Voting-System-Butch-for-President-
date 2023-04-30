@@ -21,7 +21,7 @@
             {% for organization in object_list %}
             <!-- Display Objects -->
             <li class="listChoiceOption">{{ organization.name }}</li>
-            <li class="listChoiceOptionLink"><a href="{% url 'orgvote:organizationView' organization.id %}">{{ "link" }}</a></li>
+            <li class="listChoiceOptionLink listChoiceOption"><a href="{% url 'orgvote:organizationView' organization.id %}">{{ "link" }}</a></li>
         
             <hr/>
             <!-- If object_list is empty  -->
