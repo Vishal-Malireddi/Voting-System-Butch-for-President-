@@ -136,9 +136,14 @@ h3.panel-title{
     margin-left: 0.5%;
 }
 
+li.listChoiceOption{
+    list-style-type: none;
+}
+
 label.choiceOption{
     font-size: x-large;
     margin-left: 0.35%;
+    list-style-type: none;
 }
 
 button.btn{
