@@ -35,7 +35,7 @@ virtual_env: the python virtual environment (stores all the packages needed in t
 4. run `python manage.py runserver`
 5. Click on the url in the terminal
 6. Make sure the url ends with a valid url pattern
-7. Best url to start with is `/members/register_user/`
+7. Best url to start with is `/orgvote/`
 8. You will need to add an account and then you can select an organization, topic and survey and then you can answer the questions.
 9. To create questions you need admin privleges. Currently only our dev team has those privleges
 
