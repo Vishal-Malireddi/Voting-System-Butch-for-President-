@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView, CreateView, DetailView, TemplateView
 from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 from .forms import QuestionModelForm, TopicModelForm, SurveyModelForm, OrganizationModelForm
 from .models import Question, Topic, Survey, Organization 
@@ -23,6 +25,10 @@ class QuestionCreateView(CreateView):
     form_class = QuestionModelForm
     queryset = Question.objects.all()
 
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
+
 class TopicCreateView(CreateView):
     template_name = "orgvote/create.html"
     form_class = TopicModelForm
@@ -33,7 +39,7 @@ class SurveyCreateView(CreateView):
     form_class = SurveyModelForm
     queryset = Survey.objects.all()
 
-class OrganizationCreateView(CreateView):
+class OrganizationCreateView(LoginRequiredMixin, CreateView):
     template_name = "orgvote/create.html"
     form_class = OrganizationModelForm
     queryset = Organization.objects.all()
