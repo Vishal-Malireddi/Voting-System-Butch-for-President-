@@ -12,15 +12,15 @@ from .models import Question, Topic, Survey, Organization
 def index(request):
     return HttpResponse("Hello World. this is the orgvote app")
 
-class HomePageView(TemplateView):
+class HomePageView(LoginRequiredMixin,TemplateView):
     template_name = 'orgvote/home.html'
 
-class OrganizationListView(ListView):
+class OrganizationListView(LoginRequiredMixin,ListView):
     model = Organization
     template_name = "orgvote/organizations.html"
     
 
-class QuestionCreateView(CreateView):
+class QuestionCreateView(LoginRequiredMixin,CreateView):
     template_name = "orgvote/create.html"
     form_class = QuestionModelForm
     queryset = Question.objects.all()
@@ -29,12 +29,12 @@ class QuestionCreateView(CreateView):
         form.instance.created_by = self.request.user
         return super().form_valid(form)
 
-class TopicCreateView(CreateView):
+class TopicCreateView(LoginRequiredMixin,CreateView):
     template_name = "orgvote/create.html"
     form_class = TopicModelForm
     queryset = Topic.objects.all()
     
-class SurveyCreateView(CreateView):
+class SurveyCreateView(LoginRequiredMixin, CreateView):
     template_name = "orgvote/create.html"
     form_class = SurveyModelForm
     queryset = Survey.objects.all()
@@ -44,7 +44,7 @@ class OrganizationCreateView(LoginRequiredMixin, CreateView):
     form_class = OrganizationModelForm
     queryset = Organization.objects.all()
 
-class SurveyDetailView(DetailView):
+class SurveyDetailView(LoginRequiredMixin,DetailView):
     template_name = "orgvote/survey-details.html"
     queryset = Survey.objects.all()
 
@@ -52,7 +52,7 @@ class SurveyDetailView(DetailView):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Survey, id = id_) 
 
-class TopicDetailView(DetailView):
+class TopicDetailView(LoginRequiredMixin,DetailView):
     template_name = "orgvote/topic-details.html"
     queryset = Topic.objects.all()
 
@@ -60,7 +60,7 @@ class TopicDetailView(DetailView):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Topic, id = id_) 
 
-class OrganizationDetailView(DetailView):
+class OrganizationDetailView(LoginRequiredMixin,DetailView):
     template_name = "orgvote/organization-details.html"
     queryset = Organization.objects.all()
 
@@ -68,7 +68,7 @@ class OrganizationDetailView(DetailView):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Organization, id = id_) 
 
-class QuestionDetailView(DetailView):
+class QuestionDetailView(LoginRequiredMixin,DetailView):
     template_name = "orgvote/question-details.html" 
 
     def get_object(self):

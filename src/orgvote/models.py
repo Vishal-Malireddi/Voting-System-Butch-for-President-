@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -10,12 +11,18 @@ class Organization(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse("orgvote:home")
+
 class Topic(models.Model):
     name = models.CharField(max_length=50)
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("orgvote:home")
 
 class Survey(models.Model):
     name = models.CharField(max_length=50) 
@@ -23,6 +30,8 @@ class Survey(models.Model):
 
     def __str__(self):
         return self.name
+    def get_absolute_url(self):
+        return reverse("orgvote:home")
 
 class Question(models.Model):
     name = models.CharField(max_length=50, default="question")
@@ -41,6 +50,9 @@ class Question(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("orgvote:home")
 
 
 # class Choice(models.Model):

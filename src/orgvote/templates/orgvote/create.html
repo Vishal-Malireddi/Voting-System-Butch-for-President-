@@ -19,7 +19,7 @@
         <form action="." method="POST" id="creation">
             {% csrf_token %}
             {{form.as_p}}
-            <input id="finale" type ='submit' value="Save" />
+            <input id="finale" type ='submit' value="Save" onclick="history.back"/>
         </form>
 
     </body>
