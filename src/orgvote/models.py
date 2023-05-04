@@ -9,6 +9,7 @@ class Organization(models.Model):
     name = models.CharField(max_length=50)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, null = True)
     
+    pub_time = models.DateTimeField(auto_now_add=True, null = True)
 
     def __str__(self):
         return self.name
@@ -19,7 +20,7 @@ class Organization(models.Model):
 class Topic(models.Model):
     name = models.CharField(max_length=50)
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
-    pub_time = models.DateTimeField(auto_now_add=True)
+    pub_time = models.DateTimeField(auto_now_add=True, null = True)
 
     def __str__(self):
         return self.name
@@ -31,6 +32,8 @@ class Survey(models.Model):
     name = models.CharField(max_length=50) 
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
 
+    pub_time = models.DateTimeField(auto_now_add=True, null = True)
+
     def __str__(self):
         return self.name
     def get_absolute_url(self):
@@ -38,6 +41,7 @@ class Survey(models.Model):
 
 class Question(models.Model):
     name = models.CharField(max_length=50, default="question")
+    pub_time = models.DateTimeField(auto_now_add=True, null = True)
 
     question_text = models.TextField() 
     survey = models.ForeignKey(Survey, on_delete=models.CASCADE)
