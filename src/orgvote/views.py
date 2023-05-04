@@ -4,7 +4,6 @@ from django.views.generic import ListView, CreateView, DetailView, TemplateView
 from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-
 from .forms import QuestionModelForm, TopicModelForm, SurveyModelForm, OrganizationModelForm
 from .models import Question, Topic, Survey, Organization 
 
@@ -12,7 +11,7 @@ from .models import Question, Topic, Survey, Organization
 def index(request):
     return HttpResponse("Hello World. this is the orgvote app")
 
-class HomePageView(LoginRequiredMixin,TemplateView):
+class HomePageView(TemplateView):
     template_name = 'orgvote/home.html'
 
 class OrganizationListView(LoginRequiredMixin,ListView):
@@ -33,6 +32,19 @@ class TopicCreateView(LoginRequiredMixin,CreateView):
     template_name = "orgvote/create.html"
     form_class = TopicModelForm
     queryset = Topic.objects.all()
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save()
+            next = request.POST.get('next', '/')
+            new_topic = Topic.objects.latest("name")
+            org_id = new_topic.organization.id
+            # return HttpResponseRedirect(next)
+            return HttpResponseRedirect(reverse('orgvote:organizationView', kwargs={'id': org_id}))
+            # return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+        return render(request, self.template_name, {"form": form})
     
 class SurveyCreateView(LoginRequiredMixin, CreateView):
     template_name = "orgvote/create.html"

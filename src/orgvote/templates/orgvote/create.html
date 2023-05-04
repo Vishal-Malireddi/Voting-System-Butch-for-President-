@@ -17,9 +17,11 @@
         </nav>
 
         <form action="." method="POST" id="creation">
+            <input type="hidden" name="next" value="{{ request.path }}">
             {% csrf_token %}
             {{form.as_p}}
-            <input id="finale" type ='submit' value="Save" onclick="history.back"/>
+            <!-- <input id="finale" type ='submit' value="Save" onclick="history.back()"/> -->
+                <button type="submit">Save</button>
         </form>
 
     </body>
