@@ -1,22 +1,26 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your models here.
 
 class Organization(models.Model):
     name = models.CharField(max_length=50)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, null = True)
+    
+    pub_time = models.DateTimeField(auto_now_add=True, null = True)
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("orgvote:home")
+        return reverse("orgvote:Organizations")
 
 class Topic(models.Model):
     name = models.CharField(max_length=50)
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
+    pub_time = models.DateTimeField(auto_now_add=True, null = True)
 
     def __str__(self):
         return self.name
@@ -28,6 +32,8 @@ class Survey(models.Model):
     name = models.CharField(max_length=50) 
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
 
+    pub_time = models.DateTimeField(auto_now_add=True, null = True)
+
     def __str__(self):
         return self.name
     def get_absolute_url(self):
@@ -35,6 +41,7 @@ class Survey(models.Model):
 
 class Question(models.Model):
     name = models.CharField(max_length=50, default="question")
+    pub_time = models.DateTimeField(auto_now_add=True, null = True)
 
     question_text = models.TextField() 
     survey = models.ForeignKey(Survey, on_delete=models.CASCADE)
