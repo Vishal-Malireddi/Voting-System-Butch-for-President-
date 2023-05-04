@@ -29,9 +29,12 @@
             <li>No objects yet.</li>
             {% endfor %}
         </ul>
+
+        {% if user == organization.created_by %}
         <button type="button" class="buttonMove">
             <a href="{% url 'orgvote:createTopic' %}">Create Topic</a>
         </button>
+        {% endif %}
 
     </body>
 </html>

@@ -59,11 +59,14 @@
         </div>
         {% endif %}
 
+        {% if user.is_authenticated %}
         <div id="indexBackgroundImage">
             <div class="voteHere">
                 <h2 id="voteHereButton" class="homeLogins centered"><a href="{% url 'orgvote:Organizations' %}">View Organizations!</a></h2> <!--Here we'll view the list of organizations!-->
             </div>
         </div>
+        {% endif %}
+
     </div>
     <div class="indexMainText centered">
         <h2>

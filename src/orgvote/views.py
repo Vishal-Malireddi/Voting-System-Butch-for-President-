@@ -72,6 +72,16 @@ class OrganizationCreateView(LoginRequiredMixin, CreateView):
     form_class = OrganizationModelForm
     queryset = Organization.objects.all()
 
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            organization = form.save(commit=False)
+            organization.created_by = request.user
+            organization.save()
+            return HttpResponseRedirect(reverse('orgvote:Organizations'))
+        return render(request, self.template_name, {"form": form})
+
+
 class SurveyDetailView(LoginRequiredMixin,DetailView):
     template_name = "orgvote/survey-details.html"
     queryset = Survey.objects.all()

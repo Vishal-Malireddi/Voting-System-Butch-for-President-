@@ -28,8 +28,10 @@
             <li>No objects yet.</li>
             {% endfor %}
         </ul>
+        {% if user == survey.topic.organization.created_by %}
         <button type="button" class="buttonMove">
             <a href="{% url 'orgvote:createQuestion' %}">Create Question</a>
         </button>
+        {% endif %}
     </body>
 </html>
