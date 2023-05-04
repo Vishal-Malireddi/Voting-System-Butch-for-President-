@@ -15,7 +15,7 @@ class Organization(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("orgvote:Organizations,")
+        return reverse("orgvote:Organizations")
 
 class Topic(models.Model):
     name = models.CharField(max_length=50)
