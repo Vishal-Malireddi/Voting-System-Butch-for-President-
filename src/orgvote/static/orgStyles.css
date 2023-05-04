@@ -119,6 +119,17 @@ li.listChoiceOptionlink a:after{
     color:#6f091e;
     text-decoration-color:#6f091e;
 }
+
+button.buttonMove{
+    margin-left: 1.5%;
+    height: 2em;
+    width: 15em;
+}
+
+button.buttonMove a{
+    font-size: large;
+}
+
 /*The colors above was just desparation before giving up*/
 
 .listTime p{
