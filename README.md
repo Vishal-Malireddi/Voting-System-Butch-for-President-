@@ -31,13 +31,13 @@ virtual_env: the python virtual environment (stores all the packages needed in t
 ## Launching the Application
 1. Make sure you have installed Django
 2. Make sure you are in the directory with the manage.py file
-3. run 	`python manage.py makemigrations` and `python manage.py migrate`
-4. run `python manage.py runserver`
-5. Click on the url in the terminal
-6. Make sure the url ends with a valid url pattern
-7. Best url to start with is `/orgvote/`
-8. You will need to add an account and then you can select an organization, topic and survey and then you can answer the questions.
-9. To create questions you need admin privleges. Currently only our dev team has those privleges
+3. run `python manage.py runserver`
+4. Click on the url in the terminal
+5. Make sure the url ends with a valid url pattern
+6. Best url to start with is `/orgvote/`
+7. You will need to add an account and then you can select an organization, topic and survey and then you can answer the questions.
+8. To view questions results you need admin privleges.
+	- to create an admin account use `python manage.py createsuperuser`
 
 
 ## Sources
